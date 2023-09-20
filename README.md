@@ -4,8 +4,8 @@ This is a demo project for CSV tagging, that serves as support
 for the series of posts on [ui and ux for small programs][]
 started on [Aliaume's personal webpage][].
 
-[ui and ux for small programs]: https://irif.fr/~alopez/posts/2023-09-20-ui-ux-small-programs-1.html
-[Aliaume's personal webpage]: https://irif.fr/~alopez/
+[ui and ux for small programs]: https://www.irif.fr/~alopez/posts/2023-09-20-ui-ux-small-programs-1.html
+[Aliaume's personal webpage]: https://www.irif.fr/~alopez/
 
 ## Project Description
 

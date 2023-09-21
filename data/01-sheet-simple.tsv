@@ -1,0 +1,16 @@
+Libelle operation	Libelle simplifie	Informations complementaires	Type operation	Debit	Credit
+CB FACT UnivUniv	FACT UnivUniv	-	Carte Bleue	-18.17	0.00
+VIR REMUNERATION UnivUniv	REMUNERATION UnivUniv	-	Virement	0.00	8.92
+PRV REMUNERATION MarchéPharmacie	REMUNERATION MarchéPharmacie	-	Prélèvement	0.00	39.73
+PRV REMUNERATION ÉpiceDDFIP	REMUNERATION ÉpiceDDFIP	-	Prélèvement	0.00	38.28
+VIR REMUNERATION DDFIPBaguette	REMUNERATION DDFIPBaguette	-	Virement	0.00	26.56
+CB FACT BaguetteDDFIP	FACT BaguetteDDFIP	-	Carte Bleue	-21.58	0.00
+PRV FACT MarchéMarché	FACT MarchéMarché	-	Prélèvement	-7.67	0.00
+PRV REMUNERATION DDFIPUniv	REMUNERATION DDFIPUniv	-	Prélèvement	0.00	43.83
+PRV FACT MarchéMarché	FACT MarchéMarché	-	Prélèvement	-14.23	0.00
+VIR FACT ÉpiceDDFIP	FACT ÉpiceDDFIP	-	Virement	-20.70	0.00
+VIR FACT UnivPharmacie	FACT UnivPharmacie	-	Virement	-17.06	0.00
+CB FACT ÉpiceFrance	FACT ÉpiceFrance	-	Carte Bleue	-47.63	0.00
+PRV FACT ÉpiceDDFIP	FACT ÉpiceDDFIP	-	Prélèvement	-14.73	0.00
+VIR FACT PharmacieBaguette	FACT PharmacieBaguette	-	Virement	-47.02	0.00
+CB REMUNERATION ÉpiceFrance	REMUNERATION ÉpiceFrance	-	Carte Bleue	0.00	47.47

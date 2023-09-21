@@ -1,0 +1,16 @@
+Libelle operation,Libelle simplifie,Informations complementaires,Type operation,Debit,Credit,Reference,Pointage operation,Categorie,Sous categorie,Date de comptabilisation,Date operation,Date de valeur
+VIR FACT BaguetteBaguette,FACT BaguetteBaguette,-,Virement,-30.83,0.00,161,0,Logement,-,19/10/2024,22/10/2024,23/10/2024
+PRV REMUNERATION FranceÉpice,REMUNERATION FranceÉpice,-,Prélèvement,0.00,27.89,1,0,Logement,-,13/10/2024,13/10/2024,18/10/2024
+PRV REMUNERATION BaguettePharmacie,REMUNERATION BaguettePharmacie,-,Prélèvement,0.00,41.33,13,0,Restauration,-,02/10/2024,03/10/2024,04/10/2024
+VIR REMUNERATION FranceUniv,REMUNERATION FranceUniv,-,Virement,0.00,25.09,55,0,Logement,-,16/10/2024,18/10/2024,20/10/2024
+PRV REMUNERATION ÉpicePharmacie,REMUNERATION ÉpicePharmacie,-,Prélèvement,0.00,43.47,1,0,Logement,-,27/10/2024,27/10/2024,28/10/2024
+CB REMUNERATION ÉpiceDDFIP,REMUNERATION ÉpiceDDFIP,-,Carte Bleue,0.00,35.41,159,0,Vacances,-,22/10/2024,23/10/2024,26/10/2024
+VIR REMUNERATION BaguetteDDFIP,REMUNERATION BaguetteDDFIP,-,Virement,0.00,29.29,151,0,Logement,-,03/10/2024,04/10/2024,09/10/2024
+CB FACT BaguetteMarché,FACT BaguetteMarché,-,Carte Bleue,-42.20,0.00,49,0,Vacances,-,05/10/2024,09/10/2024,09/10/2024
+CB REMUNERATION FranceÉpice,REMUNERATION FranceÉpice,-,Carte Bleue,0.00,53.57,116,0,Vacances,-,04/10/2024,11/10/2024,11/10/2024
+CB REMUNERATION DDFIPUniv,REMUNERATION DDFIPUniv,-,Carte Bleue,0.00,41.17,141,0,Restauration,-,13/10/2024,14/10/2024,22/10/2024
+PRV REMUNERATION MarchéMarché,REMUNERATION MarchéMarché,-,Prélèvement,0.00,40.55,18,0,Logement,-,12/10/2024,16/10/2024,22/10/2024
+CB REMUNERATION DDFIPUniv,REMUNERATION DDFIPUniv,-,Carte Bleue,0.00,45.58,117,0,Restauration,-,25/10/2024,28/10/2024,31/10/2024
+VIR REMUNERATION DDFIPBaguette,REMUNERATION DDFIPBaguette,-,Virement,0.00,28.51,103,0,Vacances,-,21/10/2024,25/10/2024,25/10/2024
+CB FACT PharmacieMarché,FACT PharmacieMarché,-,Carte Bleue,-47.27,0.00,199,0,Vacances,-,15/10/2024,20/10/2024,23/10/2024
+CB REMUNERATION UnivFrance,REMUNERATION UnivFrance,-,Carte Bleue,0.00,5.91,129,0,Logement,-,03/10/2024,06/10/2024,08/10/2024

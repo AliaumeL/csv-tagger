@@ -1,0 +1,16 @@
+Libelle operation,Libelle simplifie,Informations complementaires,Type operation,Debit,Credit
+PRV REMUNERATION FranceBaguette,REMUNERATION FranceBaguette,-,Prélèvement,0.00,20.90
+PRV REMUNERATION ÉpiceDDFIP,REMUNERATION ÉpiceDDFIP,-,Prélèvement,0.00,47.32
+PRV REMUNERATION UnivPharmacie,REMUNERATION UnivPharmacie,-,Prélèvement,0.00,35.99
+VIR REMUNERATION BaguetteFrance,REMUNERATION BaguetteFrance,-,Virement,0.00,11.50
+PRV REMUNERATION ÉpiceDDFIP,REMUNERATION ÉpiceDDFIP,-,Prélèvement,0.00,49.56
+CB FACT DDFIPPharmacie,FACT DDFIPPharmacie,-,Carte Bleue,-5.19,0.00
+CB REMUNERATION FranceFrance,REMUNERATION FranceFrance,-,Carte Bleue,0.00,9.47
+PRV REMUNERATION MarchéDDFIP,REMUNERATION MarchéDDFIP,-,Prélèvement,0.00,17.14
+CB REMUNERATION DDFIPDDFIP,REMUNERATION DDFIPDDFIP,-,Carte Bleue,0.00,35.61
+CB REMUNERATION FranceUniv,REMUNERATION FranceUniv,-,Carte Bleue,0.00,34.54
+PRV FACT PharmacieÉpice,FACT PharmacieÉpice,-,Prélèvement,-3.23,0.00
+VIR FACT BaguetteDDFIP,FACT BaguetteDDFIP,-,Virement,-27.88,0.00
+PRV REMUNERATION UnivÉpice,REMUNERATION UnivÉpice,-,Prélèvement,0.00,41.75
+VIR FACT DDFIPDDFIP,FACT DDFIPDDFIP,-,Virement,-24.40,0.00
+CB FACT ÉpiceMarché,FACT ÉpiceMarché,-,Carte Bleue,-0.26,0.00

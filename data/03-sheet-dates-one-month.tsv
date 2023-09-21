@@ -1,0 +1,16 @@
+Libelle operation	Libelle simplifie	Informations complementaires	Type operation	Debit	Credit	Reference	Pointage operation	Categorie	Sous categorie	Date de comptabilisation	Date operation	Date de valeur
+PRV FACT PharmacieUniv	FACT PharmacieUniv	-	Prélèvement	-45.27	0.00	37	0	Vacances	-	25/10/2024	26/10/2024	26/10/2024
+CB FACT FrancePharmacie	FACT FrancePharmacie	-	Carte Bleue	-7.22	0.00	13	0	Vacances	-	22/10/2024	26/10/2024	27/10/2024
+PRV FACT FrancePharmacie	FACT FrancePharmacie	-	Prélèvement	-36.49	0.00	170	0	Vacances	-	06/10/2024	09/10/2024	09/10/2024
+CB REMUNERATION MarchéUniv	REMUNERATION MarchéUniv	-	Carte Bleue	0.00	20.61	29	0	Vacances	-	11/10/2024	11/10/2024	15/10/2024
+PRV FACT UnivDDFIP	FACT UnivDDFIP	-	Prélèvement	-29.48	0.00	184	0	Restauration	-	03/10/2024	08/10/2024	11/10/2024
+VIR FACT PharmacieBaguette	FACT PharmacieBaguette	-	Virement	-13.87	0.00	107	0	Vacances	-	19/10/2024	21/10/2024	28/10/2024
+CB REMUNERATION UnivDDFIP	REMUNERATION UnivDDFIP	-	Carte Bleue	0.00	35.83	73	0	Restauration	-	13/10/2024	18/10/2024	18/10/2024
+PRV REMUNERATION ÉpiceDDFIP	REMUNERATION ÉpiceDDFIP	-	Prélèvement	0.00	51.98	55	0	Restauration	-	18/10/2024	21/10/2024	25/10/2024
+PRV REMUNERATION UnivDDFIP	REMUNERATION UnivDDFIP	-	Prélèvement	0.00	20.06	168	0	Logement	-	20/10/2024	25/10/2024	25/10/2024
+CB REMUNERATION MarchéDDFIP	REMUNERATION MarchéDDFIP	-	Carte Bleue	0.00	35.18	80	0	Restauration	-	19/10/2024	19/10/2024	24/10/2024
+VIR FACT PharmacieBaguette	FACT PharmacieBaguette	-	Virement	-42.75	0.00	114	0	Vacances	-	05/10/2024	06/10/2024	13/10/2024
+VIR FACT BaguetteÉpice	FACT BaguetteÉpice	-	Virement	-31.99	0.00	84	0	Vacances	-	08/10/2024	12/10/2024	13/10/2024
+PRV FACT BaguetteUniv	FACT BaguetteUniv	-	Prélèvement	-46.30	0.00	165	0	Logement	-	12/10/2024	13/10/2024	13/10/2024
+PRV REMUNERATION UnivUniv	REMUNERATION UnivUniv	-	Prélèvement	0.00	47.07	122	0	Vacances	-	02/10/2024	02/10/2024	04/10/2024
+CB REMUNERATION ÉpiceUniv	REMUNERATION ÉpiceUniv	-	Carte Bleue	0.00	51.89	118	0	Restauration	-	13/10/2024	15/10/2024	15/10/2024

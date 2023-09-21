@@ -1,0 +1,16 @@
+Libelle operation	Libelle simplifie	Informations complementaires	Type operation	Debit	Credit	Reference	Pointage operation	Categorie	Sous categorie
+VIR FACT FranceUniv	FACT FranceUniv	-	Virement	-23.56	0.00	7	0	Restauration	-
+CB REMUNERATION DDFIPPharmacie	REMUNERATION DDFIPPharmacie	-	Carte Bleue	0.00	25.55	39	0	Logement	-
+VIR FACT BaguetteDDFIP	FACT BaguetteDDFIP	-	Virement	-10.47	0.00	188	0	Logement	-
+PRV REMUNERATION FranceUniv	REMUNERATION FranceUniv	-	Prélèvement	0.00	1.50	0	0	Restauration	-
+PRV REMUNERATION FrancePharmacie	REMUNERATION FrancePharmacie	-	Prélèvement	0.00	52.77	92	0	Vacances	-
+PRV FACT BaguetteUniv	FACT BaguetteUniv	-	Prélèvement	-19.20	0.00	67	0	Vacances	-
+PRV REMUNERATION UnivBaguette	REMUNERATION UnivBaguette	-	Prélèvement	0.00	9.25	62	0	Restauration	-
+CB FACT UnivBaguette	FACT UnivBaguette	-	Carte Bleue	-18.37	0.00	170	0	Vacances	-
+CB FACT PharmaciePharmacie	FACT PharmaciePharmacie	-	Carte Bleue	-21.71	0.00	186	0	Restauration	-
+PRV REMUNERATION UnivDDFIP	REMUNERATION UnivDDFIP	-	Prélèvement	0.00	12.09	40	0	Restauration	-
+VIR REMUNERATION FranceBaguette	REMUNERATION FranceBaguette	-	Virement	0.00	43.67	124	0	Logement	-
+PRV FACT PharmacieDDFIP	FACT PharmacieDDFIP	-	Prélèvement	-36.57	0.00	182	0	Vacances	-
+CB REMUNERATION ÉpiceBaguette	REMUNERATION ÉpiceBaguette	-	Carte Bleue	0.00	31.47	72	0	Vacances	-
+PRV FACT MarchéDDFIP	FACT MarchéDDFIP	-	Prélèvement	-42.39	0.00	92	0	Restauration	-
+CB FACT FranceBaguette	FACT FranceBaguette	-	Carte Bleue	-7.67	0.00	170	0	Logement	-

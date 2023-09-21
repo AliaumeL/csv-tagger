@@ -1,0 +1,16 @@
+Libelle operation,Libelle simplifie,Informations complementaires,Type operation,Debit,Credit,Reference,Pointage operation,Categorie,Sous categorie
+CB FACT PharmacieBaguette,FACT PharmacieBaguette,-,Carte Bleue,-36.89,0.00,31,0,Restauration,-
+VIR FACT UnivÉpice,FACT UnivÉpice,-,Virement,-28.03,0.00,173,0,Vacances,-
+PRV REMUNERATION MarchéFrance,REMUNERATION MarchéFrance,-,Prélèvement,0.00,23.72,198,0,Logement,-
+PRV REMUNERATION BaguetteMarché,REMUNERATION BaguetteMarché,-,Prélèvement,0.00,17.39,27,0,Restauration,-
+VIR REMUNERATION FranceÉpice,REMUNERATION FranceÉpice,-,Virement,0.00,26.35,123,0,Logement,-
+CB REMUNERATION FranceÉpice,REMUNERATION FranceÉpice,-,Carte Bleue,0.00,47.27,25,0,Restauration,-
+VIR FACT BaguetteUniv,FACT BaguetteUniv,-,Virement,-22.58,0.00,116,0,Logement,-
+VIR FACT MarchéMarché,FACT MarchéMarché,-,Virement,-23.17,0.00,6,0,Logement,-
+PRV REMUNERATION UnivUniv,REMUNERATION UnivUniv,-,Prélèvement,0.00,23.50,46,0,Vacances,-
+PRV FACT UnivFrance,FACT UnivFrance,-,Prélèvement,-10.31,0.00,124,0,Logement,-
+VIR FACT BaguetteDDFIP,FACT BaguetteDDFIP,-,Virement,-11.27,0.00,154,0,Logement,-
+CB FACT MarchéFrance,FACT MarchéFrance,-,Carte Bleue,-43.57,0.00,67,0,Logement,-
+CB REMUNERATION MarchéMarché,REMUNERATION MarchéMarché,-,Carte Bleue,0.00,38.11,62,0,Logement,-
+CB FACT UnivBaguette,FACT UnivBaguette,-,Carte Bleue,-49.05,0.00,94,0,Logement,-
+CB REMUNERATION PharmacieDDFIP,REMUNERATION PharmacieDDFIP,-,Carte Bleue,0.00,48.88,38,0,Logement,-

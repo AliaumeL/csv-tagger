@@ -2,7 +2,7 @@
 
 # Data Driven Python
 from typing import Optional, List, Dict, Callable, Tuple
-from pydantic import BaseModel, parse_obj_as, parse_raw_as
+from pydantic import BaseModel, parse_obj_as, parse_raw_as, ValidationError
 import datetime
 
 # calendar printing
@@ -30,6 +30,8 @@ import click
 # In order to maintain compatibility with
 # other systems, the State is serialised into a CSV file
 # with the extra information added on a first line prepended.
+
+CURRENT_VERSION="0.1.0"
 
 DATE_FORMAT = "%d/%m/%Y"
 DATE_FORMAT_BIS = "%Y/%m/%d"
@@ -67,9 +69,11 @@ class CSVFile(BaseModel):
 
 
 class State(BaseModel):
+    version: str
     cursor: int
     mapping: CSVMapping
     data: List[CSVLine]
+    unparsed: List[List[str]]
 
 
 def parse_csv(p: Path, delimiter=";", quotechar="|") -> CSVFile:
@@ -188,9 +192,11 @@ def interactive_define_mapping(c: CSVFile) -> CSVMapping:
 
 def upgrade_csv(c: CSVFile, m: CSVMapping) -> State:
     return State(
+        version=CURRENT_VERSION,
         cursor=0,
         mapping=m,
         data=[parse_csv_line(line, m) for line in c.content[c.start :]],
+        unparsed=[line for line in c.content[:c.start]]
     )
 
 
@@ -309,6 +315,8 @@ def update_tag(name: str) -> Callable[[State], None]:
 
     return _update
 
+def show_help(s : State):
+    print(actions)
 
 actions = {
     "<": prev_line,
@@ -316,6 +324,7 @@ actions = {
     "": next_line,
     "«": prev_tag,
     "»": next_tag,
+    "?": show_help,
 }
 
 def interactive_modify(s : State, p : Path):
@@ -345,7 +354,8 @@ def print_global_summary(s : State):
     for tag,count in tags_count.items():
         pos = tags_credit[tag]
         neg = tags_debit[tag]
-        print(f"\t [{tag}] \t {count} items \t +{pos:.2f}€ \t {neg:.2f}€")
+        tot = pos + neg
+        print(f"\t [{tag}] \t {count} items \t +{pos:.2f}€ {neg:.2f}€ \t = {tot:.2f}€")
 
 
 @click.group()
@@ -383,6 +393,29 @@ def resume(file : Path):
     interactive_modify(s, file)
     # STEP 3: we display the results
     print_global_summary(s)
+
+@cli.command()
+def schema():
+    try:
+        print(State.model_json_schema())
+    except AttributeError:
+        print("JSON Schema creation is not supported on your system")
+
+@cli.command()
+@click.argument("file", type=Path, required=True)
+def validate(file : Path):
+    with open(file, "r") as f:
+        try:
+            data = json.load(f)
+            s = State.parse_obj(data)
+            print(f"The object is correctly parsed")
+            if s.version != CURRENT_VERSION:
+                print(f"The versions of the program ({CURRENT_VERSION}) and of the file ({s.version}) mismatch. There could be incompatibilities")
+        except json.JSONDecodeError:
+            print("Could not read the JSON file")
+        except ValidationError as exec:
+            print(f"Invalid representation {exec}")
+            print(f"This could be a version problem, current version is {CURRENT_VERSION}")
 
 
 if __name__ == "__main__":

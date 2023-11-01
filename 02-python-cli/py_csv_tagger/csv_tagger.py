@@ -16,11 +16,6 @@ import json
 # Command Line Interface
 import click
 
-import requests
-
-
-#
-#
 # Structuration of the code is as follows.
 #
 # The first objects correspond to the data this CLI program
@@ -37,6 +32,16 @@ import requests
 # with the extra information added on a first line prepended.
 
 DATE_FORMAT = "%d/%m/%Y"
+DATE_FORMAT_BIS = "%Y/%m/%d"
+DATE_FORMAT_TER = "%Y-%m-%d"
+
+def best_effort_date_parsing(s : str) -> datetime.date:
+    for f in [DATE_FORMAT, DATE_FORMAT_TER, DATE_FORMAT_BIS]:
+        try:
+            return datetime.datetime.strptime(s, f).date()
+        except ValueError:
+            pass
+    raise ValueError(f"Could not parse {s} as a date...")
 
 class CSVLine(BaseModel):
     content: List[str]
@@ -122,7 +127,7 @@ def parse_csv_line(ctn: List[str], mapping: CSVMapping) -> CSVLine:
     return CSVLine(
         content=ctn,
         dates={
-            datename: datetime.datetime.strptime(ctn[datecolumn], DATE_FORMAT)
+            datename: best_effort_date_parsing(ctn[datecolumn])
             for (datename, datecolumn) in mapping.dates.items()
         },
         tag=None,
@@ -175,6 +180,10 @@ def interactive_define_mapping(c: CSVFile) -> CSVMapping:
 # --> opens the CSV file with the same parameters as state.
 # --> this is useful if we keep receiving CSV files with similar
 # --> formatting.
+#
+# def restructure (s : State) -> State:
+# --> restructure an existing state. This can be used if there
+# --> was a mistake in state definition.
 
 
 def upgrade_csv(c: CSVFile, m: CSVMapping) -> State:

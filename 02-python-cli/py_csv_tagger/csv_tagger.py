@@ -39,7 +39,7 @@ import requests
 DATE_FORMAT = "%d/%m/%Y"
 
 class CSVLine(BaseModel):
-    _content: List[str]
+    content: List[str]
     dates: Dict[str, datetime.date]
     tag: Optional[str]
     infos: Dict[str, str]
@@ -120,7 +120,7 @@ def parse_csv_line(ctn: List[str], mapping: CSVMapping) -> CSVLine:
         credit = 0
 
     return CSVLine(
-        _content=ctn,
+        content=ctn,
         dates={
             datename: datetime.datetime.strptime(ctn[datecolumn], DATE_FORMAT)
             for (datename, datecolumn) in mapping.dates.items()
@@ -130,8 +130,8 @@ def parse_csv_line(ctn: List[str], mapping: CSVMapping) -> CSVLine:
             infoname: ctn[infocolumn]
             for (infoname, infocolumn) in mapping.infos.items()
         },
-        debit=credit,
-        credit=debit,
+        debit=debit,
+        credit=credit,
     )
 
 
@@ -226,7 +226,6 @@ class DayInMonthHighlightingCalendar(calendar.TextCalendar):
         return s
 
     def formatweek(self, theweek : List[Tuple[int,int]], width : int, year: int, month : int):
-        print(f"{theweek} / {year} / {month}", flush=True)
         return ' '.join(self.formatday(d, wd, width, year, month) for (d,wd) in theweek)
 
     def formatmonth(self, theyear, themonth, w=0, l=0):
@@ -262,7 +261,7 @@ def print_line_summary(s: State):
 def print_line_balance(s: State):
     pos = s.data[s.cursor].credit
     neg = s.data[s.cursor].debit
-    print(f"\t +{pos} / {neg} \t {pos - neg}")
+    print(f"\t +{pos:.2f} / {neg:.2f} \t {pos - neg:.2f}")
 
 
 def print_line_status(s: State):
@@ -337,7 +336,7 @@ def print_global_summary(s : State):
     for tag,count in tags_count.items():
         pos = tags_credit[tag]
         neg = tags_debit[tag]
-        print(f"\t [{tag}] \t {count} items \t +{pos}€ \t {neg}€")
+        print(f"\t [{tag}] \t {count} items \t +{pos:.2f}€ \t {neg:.2f}€")
 
 
 @click.group()
@@ -374,7 +373,7 @@ def resume(file : Path):
     # STEP 2: we update in a loop
     interactive_modify(s, file)
     # STEP 3: we display the results
-    print_summary(s)
+    print_global_summary(s)
 
 
 if __name__ == "__main__":

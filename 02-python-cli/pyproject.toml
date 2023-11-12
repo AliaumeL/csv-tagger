@@ -16,3 +16,7 @@ classifiers = [
     "License :: OSI Approved :: GPL License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "click",
+    "pydantic",
+]

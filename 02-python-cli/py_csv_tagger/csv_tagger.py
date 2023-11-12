@@ -26,10 +26,6 @@ import click
 # CSV -> State
 # State -> String
 # String -> State
-#
-# In order to maintain compatibility with
-# other systems, the State is serialised into a CSV file
-# with the extra information added on a first line prepended.
 
 CURRENT_VERSION="0.1.0"
 

@@ -2,7 +2,7 @@
 
 # Data Driven Python
 from typing import Optional, List, Dict, Callable, Tuple
-from pydantic import BaseModel, parse_obj_as, parse_raw_as, ValidationError
+from pydantic import BaseModel, ValidationError
 import datetime
 
 # calendar printing
@@ -171,8 +171,6 @@ def interactive_define_mapping(c: CSVFile) -> CSVMapping:
 
     fake_line = [f"{a} / {b}" for (a, b) in zip(c.content[0], c.content[c.start])]
     print(render_csv_line(fake_line))
-    parsed_line = parse_csv_line(first_line, mapping)
-    print(parsed_line)
     return mapping
 
 
@@ -198,11 +196,13 @@ def upgrade_csv(c: CSVFile, m: CSVMapping) -> State:
 
 def read_state(p : Path) -> State:
     with open(p, "r") as f:
-        return State.parse_obj(json.load(f))
+        txt = f.read()
+        return State.model_validate_json(txt)
 
 def write_state(s : State, p : Path):
     with open(p, "w") as f:
-        f.write(s.json())
+        m = s.model_dump_json()
+        f.write(m)
 
 
 def one_character_summary(s: State, pos: int, l: CSVLine) -> str:
@@ -254,6 +254,10 @@ class DayInMonthHighlightingCalendar(calendar.TextCalendar):
 
 def print_line_calendar(s: State):
     dates = s.data[s.cursor].dates
+
+    if len(dates) == 0:
+        return 
+
     min_date = min(dates.values())
     max_date = max(dates.values())
     cal = DayInMonthHighlightingCalendar(days_to_highlight=list(dates.values()))
@@ -312,7 +316,16 @@ def update_tag(name: str) -> Callable[[State], None]:
     return _update
 
 def show_help(s : State):
-    print(actions)
+    print("\nShowing help")
+    print("Available actions: ")
+    print("\t[<]        previous item")
+    print("\t[>]        next     item")
+    print("\t[«]        previous untagged item")
+    print("\t[«]        next     untagged item")
+    print("\t[?]        show     help")
+    print("\t[q / quit] stop tagging")
+    print("\t[ * ]      assign   tag")
+    print("\nNOTE: <,>,«,»,?,q,quit cannot be used as tags\n")
 
 actions = {
     "<": prev_line,
@@ -347,11 +360,12 @@ def print_global_summary(s : State):
         tags_credit[t] = tags_credit.get(t, 0) + line.credit
         tags_debit[t] = tags_debit.get(t, 0) + line.debit
         tags_count[t] = tags_count.get(t, 0) + 1
+    tag_width = max(len(tag) for tag in tags_count.keys())
     for tag,count in tags_count.items():
         pos = tags_credit[tag]
         neg = tags_debit[tag]
         tot = pos + neg
-        print(f"\t [{tag}] \t {count} items \t +{pos:.2f}€ {neg:.2f}€ \t = {tot:.2f}€")
+        print(f" [{tag: <{tag_width}}] \t {count} items \t +{pos:10.2f}€ \t {neg:10.2f}€ \t = {tot:10.2f}€")
 
 
 @click.group()
@@ -376,8 +390,10 @@ def new(save: Optional[Path], file : Path):
     s = upgrade_csv(c, m)
     save = save or file.with_suffix(".csvt")
     # STEP 2: we update in a loop
+    print("-" * 10)
     interactive_modify(s, save)
     # STEP 3: we display the results
+    print("-" * 10)
     print_global_summary(s)
 
 @cli.command()
@@ -386,8 +402,10 @@ def resume(file : Path):
     # STEP 1: we acquire the data
     s = read_state(file)
     # STEP 2: we update in a loop
+    print("-" * 10)
     interactive_modify(s, file)
     # STEP 3: we display the results
+    print("-" * 10)
     print_global_summary(s)
 
 @cli.command()

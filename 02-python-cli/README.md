@@ -2,7 +2,13 @@
 
 [Libre Office Calc]: https://www.libreoffice.org/discover/calc/
 
-![Demonstration of the usage on a sample CSV file](csv-python-demo.svg)
+<figure>
+    <img src="csv-python-demo.svg" width="90%" />
+    <caption>
+    Illustrating the usage of the program on a sample
+    CSV file.
+    </caption>
+</figure>
 
 ## Objectives
 
